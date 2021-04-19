@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/weather/weather",
+    "pages/city/city",
+    "pages/life/life"
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "天气预报",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b6b6b6",
+    "selectedColor": "#444",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/foot-nav01.png",
+        "selectedIconPath": "images/foot-nav01-hover.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "iconPath": "images/foot-nav02.png",
+        "selectedIconPath": "images/foot-nav02-hover.png",
+        "text": "天气"
+      },
+      {
+        "pagePath": "pages/city/city",
+        "iconPath": "images/foot-nav03.png",
+        "selectedIconPath": "images/foot-nav03-hover.png",
+        "text": "城市"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "iconPath": "images/foot-nav04.png",
+        "selectedIconPath": "images/foot-nav04-hover.png",
+        "text": "生活指数"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

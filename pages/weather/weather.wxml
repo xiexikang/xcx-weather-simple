@@ -1,0 +1,96 @@
+<!--pages/weather/weather.wxml-->
+<view class="the-weather">
+  <view class="wea-thead">
+    <view class="wea-city">
+      <text class="c-name">{{cityName}}</text>
+      <view class="c-temp">
+        <view class="temp-now">{{weatherInfo.temp}}°</view>
+        <view class="temp-state">{{weatherInfo.text}}</view>
+      </view>
+      <view class="c-oth">
+        <view class="tn">风力<text class="ti">{{weatherInfo.windScale}}级</text></view>
+        <view class="tn">湿度<text class="ti">{{weatherInfo.humidity}}%</text></view>
+        <view class="tn">气压<text class="ti">{{weatherInfo.pressure}}hPa</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wea-life" >
+    <swiper class="life-swiper" vertical="true" autoplay="true" circular="true" interval="5000" wx:if="{{lifeList.length>0}}">
+      <block wx:for='{{lifeList}}' wx:for-item='v' wx:key='k'>
+        <swiper-item class='li-item'>
+          <label class="ti">{{v.name}}：</label>
+          <label class="td">{{v.text}}</label>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="wea-mid">
+    <view class="mid-item" wx:for="{{dailyList}}" wx:for-index="index" wx:key="key" wx:for-item="v">  
+      <view class="item-thh">
+        <text class="ta" wx:if='{{index==0}}'>今天</text>
+        <text class="ta" wx:elif='{{index==1}}'>明天</text>
+        <text class="ta" wx:elif='{{index==2}}'>后天</text>
+        <text class="tb">{{v.tempMax}}°/{{v.tempMin}}°</text>
+      </view>
+      <view class="item-tdd">
+        <text class="tc">白天：{{v.textDay}}</text>
+        <text class="tc">夜晚：{{v.textNight}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="wea-bot">
+    <view class="thk">天气信息</view>
+    <view class="wea-info-list">
+      <view class="li" wx:if="{{dailyList.length>0}}">
+        <view class="ti">日出时间</view>
+        <view class="tn">{{dailyList[0].sunrise}}</view>
+      </view>
+      <view class="li" wx:if="{{dailyList.length>0}}">
+        <view class="ti">日落时间</view>
+        <view class="tn">{{dailyList[0].sunset}}</view>
+      </view>
+      <view class="li" wx:if="{{dailyList.length>0}}">
+        <view class="ti">月升时间</view>
+        <view class="tn">{{dailyList[0].moonrise}}</view>
+      </view>
+      <view class="li" wx:if="{{dailyList.length>0}}">
+        <view class="ti">月落时间</view>
+        <view class="tn">{{dailyList[0].moonset}}</view>
+      </view>
+      <view class="li" wx:if="{{dailyList.length>0}}">
+        <view class="ti">紫外线强度</view>
+        <view class="tn" wx:if="{{dailyList.length>0}}">{{dailyList[0].uvIndex}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">体感温度</view>
+        <view class="tn">{{weatherInfo.feelsLike}}°</view>
+      </view>
+      <view class="li">
+        <view class="ti">降水量</view>
+        <view class="tn">{{weatherInfo.precip}}毫米</view>
+      </view>
+      <view class="li">
+        <view class="ti">云量</view>
+        <view class="tn">{{weatherInfo.cloud}}%</view>
+      </view>
+      <view class="li">
+        <view class="ti">风向</view>
+        <view class="tn">{{weatherInfo.windDir}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">风向角度</view>
+        <view class="tn">{{weatherInfo.wind360}}</view>
+      </view>
+      <view class="li">
+        <view class="ti">风速</view>
+        <view class="tn">{{weatherInfo.windSpeed}}公里/小时</view>
+      </view>
+      <view class="li">
+        <view class="ti">能见度</view>
+        <view class="tn">{{weatherInfo.vis}}公里</view>
+      </view>
+    </view>
+  </view>
+</view>

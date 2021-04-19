@@ -1,0 +1,16 @@
+<!--pages/life/life.wxml-->
+<view class="the-life">
+  <view class="life-poster">
+    <image class="img" src="{{poster}}"></image>
+  </view>
+  <view class="life-com">
+    <view class="life-list" wx:if="{{lifeList.length>0}}">
+      <block wx:for='{{lifeList}}' wx:for-item='v' wx:key='k'>
+        <view class="item">
+          <label class="ti">{{v.name}}</label>
+          <label class="td">{{v.text}}</label>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

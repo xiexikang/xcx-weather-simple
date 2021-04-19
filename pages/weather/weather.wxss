@@ -1,0 +1,180 @@
+/* pages/weather/weather.wxss */
+.the-weather {
+   width: 100%;
+   overflow: hidden;
+}
+
+.wea-thead {
+   width: 100%;
+   height: 450rpx;
+   background: linear-gradient(to bottom, #9ad4f0, #fff);
+   position: relative;
+}
+
+.wea-city {
+   width: 100%;
+   padding: 40rpx 20rpx;
+   text-align: center;
+}
+
+.wea-city .c-name {
+   padding: 0 20rpx;
+   color: #333;
+   font-size: 40rpx;
+   font-weight: 600;
+}
+
+.wea-city .c-temp {
+   margin-top: 40rpx;
+   overflow: hidden;
+}
+
+.temp-now {
+   font-size: 120rpx;
+}
+
+.temp-state {
+   font-size: 30rpx;
+}
+
+.temp-range {
+   font-size: 26rpx;
+   color: #6b7477;
+   margin-top: 10rpx;
+}
+
+.temp-range .hign-t,
+.temp-range .low-t {
+   padding: 0 10rpx;
+}
+
+.wea-city .c-oth {
+   padding: 0 100rpx;
+   display: flex;
+   color: #999;
+   font-size: 24rpx;
+   margin-top: 25rpx;
+}
+
+.c-oth .tn {
+   flex: 1;
+}
+
+.c-oth .tn .ti {
+   margin-left: 5rpx;
+}
+
+.wea-life {
+   width: 100%;
+   min-height: 150rpx;
+   overflow: hidden;
+   border-bottom: 1px solid #dff2fd;
+   padding: 20rpx 30rpx;
+   box-sizing: border-box;
+}
+
+.life-swiper {
+   width: 100%;
+   height: 100rpx;
+   color: #666;
+}
+
+.life-swiper .li-item {
+   width: 100%;
+   height: 100%;
+   line-height: 50rpx;
+   font-size: 28rpx;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+}
+
+.wea-mid {
+   width: 100%;
+   min-height: 120rpx;
+   padding: 30rpx 0;
+   overflow: hidden;
+   margin-top: 50rpx;
+   background-color: #f6fbfe;
+   display: flex;
+}
+
+.wea-mid .mid-item {
+   flex: 1;
+   padding: 0 20rpx;
+   box-sizing: border-box;
+   float: left;
+   font-size: 28rpx;
+   border-right: 1px solid #dfe3e9;
+}
+
+.item-thh {
+   width: 100%;
+   overflow: hidden;
+}
+
+.item-thh .ta {
+   float: left;
+}
+
+.item-thh .tb {
+   float: right;
+   color: #666;
+   font-size: 26rpx;
+}
+
+.item-tdd {
+   width: 100%;
+   overflow: hidden;
+   margin-top: 10rpx;
+   color: #999;
+   font-size: 24rpx;
+}
+
+.item-tdd .tc {
+   width: 100%;
+   display: block;
+}
+
+.wea-bot {
+   width: 100%;
+   overflow: hidden;
+   margin-top: 40rpx;
+   padding-bottom: 20rpx;
+}
+
+.wea-bot .thk {
+   padding: 0 20rpx;
+   line-height: 80rpx;
+   border-bottom: 1px solid #f0f0f0;
+   font-size: 30rpx;
+}
+
+.wea-info-list {
+   width: 100%;
+   overflow: hidden;
+}
+
+.wea-info-list .li {
+   width: 25%;
+   min-height: 134rpx;
+   padding: 30rpx 5rpx;
+   box-sizing: border-box;
+   text-align: center;
+   font-size: 26rpx;
+   border: 1px solid #f0f0f0;
+   border-left-color: transparent;
+   border-top-color: transparent;
+   float: left;
+}
+
+.wea-info-list .li:nth-of-type(4n) {
+   border-right-color: transparent;
+}
+
+.wea-info-list .li .tn {
+   color: #999;
+   font-size: 24rpx;
+   margin-top: 5rpx;
+}
