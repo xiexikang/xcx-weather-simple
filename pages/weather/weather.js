@@ -7,12 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //天气参数
-    weatherParams: {
-      key: '', //密钥
-      location: 101190701, //默认江苏盐城
-    },
-    cityName: '盐城市', //当前城市名
+    cityName: '', //当前城市名
     //天气信息
     weatherInfo: {},
     //未来3天天气列表
@@ -24,7 +19,6 @@ Page({
   //初始化
   init() {
     if (app.globalData.cityId) {
-      let location = 'weatherParams.location';
       this.setData({
         [location]: app.globalData.cityId,
         cityName: app.globalData.cityName
@@ -39,9 +33,10 @@ Page({
       title: '加载中',
     })
     let that = this;
-    let params = that.data.weatherParams;
+    let params = {};
     Object.assign(params, {
-      key: globalData.key
+      key: globalData.key,
+      location:globalData.cityId,
     });
     utils.requestAjax.get('https://devapi.qweather.com/v7/weather/now', params)
       .then((res) => {
@@ -74,9 +69,7 @@ Page({
   //生活指数
   getLifeList(params) {
     let that = this;
-    Object.assign(params, {
-      type: 0
-    });
+    Object.assign(params, {type: 0});
     utils.requestAjax.get('https://devapi.qweather.com/v7/indices/1d', params)
       .then((res) => {
         if (res.data.code != 200) {
@@ -106,7 +99,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**

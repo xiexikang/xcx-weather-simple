@@ -7,10 +7,10 @@ Page({
   data: {
     //个人信息
     myInfo: {
-      avatar: 'http://cdn-leo-img.hellorobotedu.com/3b1f884f302542a39dfb970a7ea27447',//换头像，带域名地址的
-      name: '李心悦',
-      classes: 'B网络191',
-      number: '19010715024',
+      avatar: 'https://leo-img-repo.oss-cn-shenzhen.aliyuncs.com/7653f47c6f674c8caa0b9cd414dd7642',//换头像，带域名地址的
+      name: 'xxk',
+      classes: 'web前端班1001',
+      number: '2000122323',
     }
   },
 

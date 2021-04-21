@@ -8,11 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //天气参数
-    weatherParams: {
-      key: '', //密钥
-      location: 101190701, //默认江苏盐城
-    },
     poster:'http://cdn-leo-img.hellorobotedu.com/2b12f93eae34454995f5ecc3b95ce337',
     //生活指数列表
     lifeList: [],
@@ -28,14 +23,15 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    let that = this;
-    let params = that.data.weatherParams;
+    let that = this, params = {};
     Object.assign(params, {
       key: globalData.key,
+      location:globalData.cityId,
       type: 0
     });
     utils.requestAjax.get('https://devapi.qweather.com/v7/indices/1d', params)
       .then((res) => {
+        console.log(res)
         wx.hideLoading();
         if (res.data.code != 200) {
           return
@@ -44,14 +40,13 @@ Page({
           lifeList: res.data.daily
         })
       })
-      
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.init();
+   
   },
 
   /**
@@ -65,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.init();
   },
 
   /**

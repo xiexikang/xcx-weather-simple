@@ -34,8 +34,8 @@ App({
     })
   },
   globalData: {
-    key: '',//和风天气的key
-    cityId:'',//城市id
-    cityName:'',//城市名
+    key: '',//和风天气的key,自行去申请，谢谢
+    cityId:'101280101',//城市id
+    cityName:'广州市',//城市名
   }
 })
